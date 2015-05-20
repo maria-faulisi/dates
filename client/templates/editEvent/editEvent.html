@@ -1,0 +1,22 @@
+<template name="editEvent">
+    {{>_header}}
+    <div class="template-editEvent">
+        <div class="page-header">
+            <h1>Edit your Event</h1>
+        </div>
+        <div class="eventDetails">
+            <div class="form-style">
+                <h1>Edit Event Information</h1>
+                <form>
+                    <input type="text" name="editEventName" id="editEventName" value={{eventName}}><br>
+                    <textarea name="editEventDescription" id="editEventDescription" type="text" rows="8" cols="50">{{description}}</textarea><br>
+                    <input type="submit" id="editSubmit" value="Update Event" />
+                </form>
+            </div>
+        </div>
+        <div class="calView">
+            <div id ="eventCalendar">
+            </div>
+        </div>
+    </div>
+</template>

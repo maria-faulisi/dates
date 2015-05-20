@@ -1,0 +1,21 @@
+<template name="profile">
+    {{> _header}}
+    <div class="template-profile">
+        <div class="page-header">
+            <h1>Profile Page</h1>
+        </div>
+        {{#if currentUser}}
+            <div class="form-style">
+                <h1>Update Profile Information</h1>
+                <form>
+                    First Name:<input type="text" name="userName" value="{{currentUser.profile.firstname}}"><br/>
+                    Last Name:<input type="text" name="lastName" value="{{currentUser.profile.lastname}}"><br/>
+                    Email:<input type="text" name="Email" value="{{currentUser.emails.[0].address}}"><br/>
+                    About:<textarea name="about" id="about" type="text" placeholder="about yourself" rows="8" cols="50">{{currentUser.profile.about}}</textarea><br>
+                    <input type="submit" value="Update">
+                </form>
+            </div>
+        {{/if}}
+    </div>
+</template>
+

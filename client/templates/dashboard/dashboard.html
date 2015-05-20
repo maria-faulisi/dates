@@ -1,0 +1,42 @@
+<template name="dashboard">
+    {{> _header}}
+    <div class="template-dashboard">
+        <div class="page-header ">
+            <h1>Dashboard</h1>
+        </div>
+        {{#if hasEvents}}
+            <h3>Events You Have Created</h3>
+            <hr/>
+            {{#if yourEventsCheck}}
+                <ul class="list-group">
+                    {{#each yourEvents}}
+                        <li class="list-group-item" >
+                            <a href="#" class="eventLink">{{eventName}}</a><br/>{{description}}
+                            <button class="deleteEventBtn btn btn-primary dashboardButtons ">Delete Event</button>
+                            <button class="editEventBtn btn btn-primary dashboardButtons">Edit Event</button>
+                            <button class="pickBtn btn btn-primary dashboardButtons" id="pickDatesBtn" type="button">Pick my dates!</button>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <h5 class="SmallnoEventText">You currently don't have any events created</h5>
+            {{/if}}
+            <h3>Events You Have Been Invited To</h3>
+            <hr/>
+            {{#if invitedEventsCheck}}
+                <ul class="list-group">
+                    {{#each invitedEvents}}
+                        <li class="list-group-item" >
+                            <a href="#" class="eventLink">{{eventName}}</a><br/>{{description}}
+                            <button class="pickBtn btn btn-primary dashboardButtons" id="pickDatesBtn" type="button">Pick my dates!</button>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <h5 class="SmallnoEventText">Your currently not invited to any other events</h5>
+            {{/if}}
+        {{else}}
+            <h3 class="noEventText">You currently don't have any events scheduled</h3>
+        {{/if}}
+    </div>
+</template>

@@ -1,0 +1,6 @@
+MakeEventController = AppController.extend({
+
+    data: {
+
+    }
+});

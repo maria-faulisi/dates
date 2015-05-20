@@ -1,0 +1,6 @@
+EventPageController = AppController.extend({
+
+    data: {
+
+    }
+});

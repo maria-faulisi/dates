@@ -1,0 +1,6 @@
+FriendsController = AppController.extend({
+
+    data: {
+
+    }
+});

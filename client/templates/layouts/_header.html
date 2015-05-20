@@ -1,0 +1,24 @@
+<template name="_header">
+    <nav class="navbar navbar-default navbar-static-top navigationStyle" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h2 class="appTitle">Dates</h2>
+            </div>
+            <div class="collapse navbar-collapse" id="main-nav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="{{ isActiveRoute regex='dashboard' }} menuItem"><a class="menuItem" href="{{ pathFor 'dashboard' }}"><i class="fa fa-home"></i> Dashboard</a></li>
+                    <li class="{{ isActiveRoute regex='friends' }}"><a href="{{ pathFor 'friends' }}"><i class="fa fa-users"></i> Friends</a></li>
+                    <li class="{{ isActiveRoute regex='makeEvent' }}"><a href="{{ pathFor 'makeEvent' }}"><i class="fa fa-plus"></i> Make New Event</a></li>
+                    <li class="{{ isActiveRoute regex='profile' }}"><a href="{{ pathFor 'profile' }}"><i class="fa fa-user"></i> Profile</a></li>
+                    <li><a href="#" data-action="logout"><i class="fa fa-lock"></i> Sign Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</template>

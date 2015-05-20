@@ -1,0 +1,78 @@
+<template name="makeEvent">
+    {{> _header}}
+    <div class="template-makeEvent">
+        <div class="page-header">
+            <h1>Make A New Event</h1>
+        </div>
+        <div class="eventDetails">
+            <div class="form-style">
+                <h1>Event Information</h1>
+                <form>
+                    <input type="text" name="eventName" id="eventName" value="" placeholder="Event Name" />
+                    <textarea name="eventDescription" id="eventDescription" type="text" placeholder="Give a little description ;)" rows="8" cols="50"></textarea><br/><br/>
+                    <h1>Who is invited?</h1>
+                    <ul class="eventPageWhoList">
+
+                        <!--STILL WORKING ON THIS-->
+                        {{#each friends}}
+                            <li>
+                                <button class="addBtn selectBtn friendBtn center-block" onclick="$(this).toggleClass('toggleOn')">{{profile.firstname}} {{profile.lastname}}</button>
+                            </li>
+                        {{/each}}
+                    </ul>
+                    <br/><br/>
+                    <!-- -->
+                    <input type="submit" value="Create Event" />
+                </form>
+            </div>
+        </div><!--closes .eventDetails-->
+        <div class="monthAndYear" id="monthAndYear">
+            <div id="year" class="year-container">
+                <h2 class="h2">Year</h2>
+                <div class="monthAndYearHeader">
+                    <button class="goBack  btn btn-primary dashboardButtons" id="prevYear" type="button">Previous</button>
+                    <div class="centerCal" id="yearDisplayed">{{year}}</div>
+                    <button class="goForward  btn btn-primary dashboardButtons" id="nextYear" type="button">Next</button>
+                </div>
+            </div>
+            <div id="months" class="monthsList">
+                <div class="month" data-month= "0">
+                    <p>Janurary</p>
+                </div>
+                <div class="month" data-month= "1">
+                    <p>Feburary</p>
+                </div>
+                <div class="month" data-month= "2">
+                    <p>March</p>
+                </div>
+                <div class="month" data-month= "3">
+                    <p>April</p>
+                </div>
+                <div class="month" data-month= "4">
+                    <p>May</p>
+                </div>
+                <div class="month" data-month= "5">
+                    <p>June</p>
+                </div>
+                <div class="month" data-month= "6">
+                    <p>July</p>
+                </div>
+                <div class="month" data-month= "7">
+                    <p>August</p>
+                </div>
+                <div class="month" data-month= "8">
+                    <p>September</p>
+                </div>
+                <div class="month" data-month= "9">
+                    <p>October</p>
+                </div>
+                <div class="month" data-month= "10">
+                    <p>November</p>
+                </div>
+                <div class="month" data-month= "11">
+                    <p>December</p>
+                </div>
+            </div>
+        </div>
+    </div><!--closes .template-makeEvent-->
+</template>

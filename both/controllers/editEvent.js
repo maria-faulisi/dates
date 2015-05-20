@@ -1,0 +1,6 @@
+EditEventController = AppController.extend({
+
+    data: {
+
+    }
+});

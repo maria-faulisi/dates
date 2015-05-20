@@ -1,0 +1,38 @@
+<template name="eventPage">
+    {{> _header}}
+    <div class="page-header">
+        <h1>{{eventName}}</h1>
+    </div>
+    <div class="eventDetails">
+        <div class="event">
+            <div>
+                <h3>When:</h3>
+                <h4>{{targetDateDisplay eventMonthYear}}</h4>
+                <h3>About: </h3><h4>{{description}}</h4>
+                <h3>Who is invited:</h3>
+                    <ul class="eventPageWhoList">
+                        <li>
+                            <h4>
+                            {{#each userName userId}}
+                                {{profile.firstname}} {{profile.lastname}}
+                            {{/each}}</h4>
+                        </li>
+                        {{#each groupMembers}}
+                        <li>
+                            <h4>
+                                {{#each profileNames memberId}}
+                                    {{profile.firstname}} {{profile.lastname}}
+                                {{/each}}
+                            </h4>
+                        </li>
+                        {{/each}}
+                    </ul>
+                <button class="button btn btn-primary dashboardButtons eventBtn" id="pickDatesBtn" type="button">Pick my dates!</button>
+            </div>
+        </div>
+    </div>
+    <div class="calView">
+        <div id ="eventCalendar">
+        </div>
+    </div>
+</template>

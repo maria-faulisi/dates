@@ -1,0 +1,34 @@
+<template name="friends">
+    {{> _header}}
+    <div class="template-friends">
+        <div class="page-header">
+            <h1>Friends List</h1>
+        </div>
+        <div class="eventDetails">
+            <div class="form-style">
+                <h1>Search for friends</h1>
+                <form>
+                    <input type="text" name="Email" placeholder="Search for a user by email" />
+                    <input class="btn btn-primary dashboardButtons" type="submit" value="Find Users" />
+                </form>
+            </div>
+        </div>
+        <div class="calView">
+            {{#if getResults}}
+
+                <div class="form-style">
+                    <h1>Results</h1>
+                    <form>
+                        First Name: {{getResults.profile.firstname}}<br/>
+                        Last Name: {{getResults.profile.lastname}}<br/>
+                        Email: {{getResults.emails/[0].address}}<br/>
+                        About: {{getResults.profile.about}}<br/>
+                        {{#if userNotFriend}}
+                            <input class="addBtn btn btn-primary dashboardButtons" type="button" name="addBtn" value="Add">
+                        {{/if}}
+                    </form>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</template>
